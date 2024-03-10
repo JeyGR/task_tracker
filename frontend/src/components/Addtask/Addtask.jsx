@@ -48,7 +48,7 @@ export const Addtask = () => {
       ) {
         const fetchData = async () => {
           await axios.post(
-            "hhttps://task-tracker-ozsp.onrender.com/api/v1/asignnewtask",
+            "https://task-tracker-ozsp.onrender.com/api/v1/asignnewtask",
             {
               name,
               category,
