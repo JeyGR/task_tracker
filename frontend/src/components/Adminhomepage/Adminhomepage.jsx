@@ -1,0 +1,57 @@
+import React, { useState, useEffect } from "react";
+import "./Adminhomepage.css";
+import Studentcard from "../Studentcard/Studentcard";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+
+const Adminhomepage = () => {
+  const [ress, setress] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "http://localhost:3000/api/v1/allstudents"
+        );
+        setress(response.data);
+      } catch (err) {
+        console.log("Error in fetching:", err);
+      }
+    };
+    fetchData();
+  }, []);
+  const navigate = useNavigate();
+
+  const handlebackbtn = () => {
+    navigate("/studentlogin");
+  };
+  const handleaddopentask = () => {
+    navigate("/addtask/00");
+  };
+
+  return (
+    <div className="topdiv">
+      <div className="navit">
+        <button
+          className="
+        backbtn"
+          onClick={handlebackbtn}
+        >
+          Back
+        </button>
+        <h3 className="admintxt">Admin Access</h3>
+        <button onClick={handleaddopentask} className="addopentaskbtn">
+          Add open Task
+        </button>
+      </div>
+      <br />
+      <div className="grid">
+        {ress.map((d, index) => {
+          return <Studentcard data={d} key={index} />;
+        })}
+      </div>
+      <br />
+    </div>
+  );
+};
+
+export default Adminhomepage;

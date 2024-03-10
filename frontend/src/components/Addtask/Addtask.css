@@ -1,0 +1,20 @@
+.highdiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+.addcard {
+  padding: 40px;
+  background-color: white;
+  box-shadow: 0px 2px 3px 1px #0000004d;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+.backbtn1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 20px;
+}
