@@ -10,7 +10,7 @@ const Adminhomepage = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://task-tracker-ozsp.onrender.com/api/v1/allstudents"
+          "http://localhost:3000/api/v1/allstudents"
         );
         setress(response.data);
       } catch (err) {

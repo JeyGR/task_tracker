@@ -47,16 +47,13 @@ export const Addtask = () => {
         (yeardiff === 0 && monthdiff === 0 && datediff >= 0)
       ) {
         const fetchData = async () => {
-          await axios.post(
-            "https://task-tracker-ozsp.onrender.com/api/v1/asignnewtask",
-            {
-              name,
-              category,
-              priority,
-              deadline,
-              id,
-            }
-          );
+          await axios.post("http://localhost:3000/api/v1/asignnewtask", {
+            name,
+            category,
+            priority,
+            deadline,
+            id,
+          });
           console.log("Data send to backend");
           alert("Task is assigned");
         };

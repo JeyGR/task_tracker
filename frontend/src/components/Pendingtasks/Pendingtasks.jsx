@@ -12,7 +12,7 @@ const Pendingtasks = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://task-tracker-ozsp.onrender.com/api/v1/asignedtasks/${id}`
+          `http://localhost:3000/api/v1/asignedtasks/${id}`
         );
         setress(response.data);
         console.log(response.data);
@@ -29,7 +29,7 @@ const Pendingtasks = () => {
     const fetchData = async () => {
       try {
         const response = await axios.post(
-          `https://task-tracker-ozsp.onrender.com/api/v1/finishtask`,
+          `http://localhost:3000/api/v1/finishtask`,
           { name, category, priority }
         );
         setress(response.data);
