@@ -32,7 +32,7 @@ const Adminlogin = () => {
   return (
     <div className="container">
       <button className="student-login-button" onClick={handleStudentLogin}>
-        Member Login
+        Student Login
       </button>
       <div className="form">
         <h2>Lead Login</h2>

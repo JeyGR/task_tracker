@@ -15,7 +15,7 @@ const Studenthomepage = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://task-tracker-ozsp.onrender.com/api/v1/unasignedtasks/`
+          `http://localhost:3000/api/v1/unasignedtasks/`
         );
         setRess(response.data);
       } catch (error) {
@@ -31,7 +31,7 @@ const Studenthomepage = () => {
     const fetchData = async () => {
       try {
         const datass = await axios.get(
-          `https://task-tracker-ozsp.onrender.com/api/v1/completedtasks/${id}`
+          `http://localhost:3000/api/v1/completedtasks/${id}`
         );
         setTaskss(datass.data);
         console.log("Fetching");
@@ -48,7 +48,7 @@ const Studenthomepage = () => {
     try {
       const update = async () => {
         const response = await axios.post(
-          `https://task-tracker-ozsp.onrender.com/api/v1/asigntask/`,
+          `http://localhost:3000/api/v1/asigntask`,
           { id, name, category, deadline, priority }
         );
         console.log(response.data);
@@ -68,7 +68,7 @@ const Studenthomepage = () => {
         <button className="menubtn" onClick={handlepending}>
           Pending
         </button>
-        <h3>Member HomePage</h3>
+        <h3>Student HomePage</h3>
         <div className="btngrp">
           <button className="profilebtn">Profile</button>
           <button onClick={handlelogout}>Logout</button>

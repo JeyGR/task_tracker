@@ -54,7 +54,7 @@ const Studentsignin = () => {
         try {
           console.log("Working");
           const ress = await axios.post(
-            "https://task-tracker-ozsp.onrender.com/api/v1/studentsignin",
+            "http://localhost:3000/api/v1/studentsignin",
             data
           );
           if (ress.data.msg == "Success") {
@@ -87,7 +87,7 @@ const Studentsignin = () => {
         Lead Login
       </button>
       <div className="form">
-        <h2>Member Signin</h2>
+        <h2>Student Signin</h2>
         <div className="form-group">
           <label>Username:</label>
           <input type="text" value={username} onChange={handleUsernameChange} />

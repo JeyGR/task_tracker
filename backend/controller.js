@@ -69,7 +69,7 @@ const asignedTasks = async (req, res) => {
   const id = req.params.id;
   try {
     await client.query(
-      "SELECT * FROM taskdetails WHERE id =$1 AND status='assigned'",
+      "SELECT * FROM taskdetails WHERE id =$1 AND status='Assigned'",
       [id],
       (err, ress) => {
         if (err) {
@@ -130,10 +130,9 @@ const asignnewTask = async (req, res) => {
       );
       res.json({ msg: "Success" });
     } else {
-      const stat = "Assigned";
       await client.query(
-        "INSERT INTO taskdetails(name,category,priority,deadline,id,status) VALUES($1, $2,$3,$4,$5,'assigned')",
-        [name, category, priority, deadline, id, stat]
+        "INSERT INTO taskdetails(name,category,priority,deadline,id,status) VALUES($1, $2,$3,$4,$5,'Assigned')",
+        [name, category, priority, deadline, id]
       );
       res.json({ msg: "Success" });
     }
@@ -145,10 +144,11 @@ const asignnewTask = async (req, res) => {
 const finishTask = async (req, res) => {
   const { name, category, priority } = req.body;
   try {
-    await client.query(
+    const res = await client.query(
       "UPDATE taskdetails SET status='Completed' WHERE name=$1 AND category=$2 AND priority=$3",
       [name, category, priority]
     );
+    console.log(res);
     res.json({ msg: "Success" });
   } catch (err) {
     console.log("Finish task error:", err);
@@ -159,20 +159,13 @@ const asignTask = async (req, res) => {
   const { id, name, category, deadline, priority } = req.body;
   const stat = "Assigned";
   try {
-    await client.query(
-      "UPDATE taskdetails SET id=$1 WHERE name=$2 AND category=$3 AND priority=$4 AND status=$5",
-      [id, name, category, priority, stat]
-    );
-    const updatedTask = await client.query(
-      "SELECT * FROM taskdetails WHERE name=$1 AND category=$2 AND priority=$3",
-      [name, category, priority]
+    const update = await client.query(
+      "UPDATE taskdetails SET status = $1, id = $2 WHERE name = $3 AND category = $4 AND priority = $5",
+      [stat, id, name, category, priority]
     );
     res.json({ msg: "Success" });
   } catch (err) {
-    console.log("Assign task error:", err);
-    res
-      .status(500)
-      .json({ error: "An error occurred while assigning the task" });
+    console.log("Error in assign task", err);
   }
 };
 
@@ -208,11 +201,11 @@ const updateTaskStatus = async (req, res) => {
 
 const submitWorkLink = async (req, res) => {
   const { id } = req.params;
-  const { workLink } = req.body;
+  const { workLink, name, priority, category } = req.body;
   try {
     await client.query(
-      "UPDATE taskdetails SET status='Submitted', worklink=$1 WHERE id=$2",
-      [workLink, id]
+      "UPDATE taskdetails SET status='Submitted', worklink=$1 WHERE id=$2 and name=$3 and priority=$4 and category=$5",
+      [workLink, id, name, priority, category]
     );
     res.json({ msg: "Success" });
     console.log("Work link submitted successfully");

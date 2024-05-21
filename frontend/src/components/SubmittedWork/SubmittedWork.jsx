@@ -11,7 +11,7 @@ const SubmittedWork = () => {
     const fetchSubmittedTasks = async () => {
       try {
         const response = await axios.get(
-          "https://task-tracker-ozsp.onrender.com/api/v1/submittedtasks"
+          "http://localhost:3000/api/v1/submittedtasks"
         );
         setSubmittedTasks(response.data.data);
         console.log("Submitted data ", response.data.data);
@@ -30,15 +30,12 @@ const SubmittedWork = () => {
 
   const handleStatusChange = async (name, category, priority, status) => {
     try {
-      await axios.post(
-        "https://task-tracker-ozsp.onrender.com/api/v1/updatetaskstatus",
-        {
-          name,
-          category,
-          priority,
-          status,
-        }
-      );
+      await axios.post("http://localhost:3000/api/v1/updatetaskstatus", {
+        name,
+        category,
+        priority,
+        status,
+      });
       setSubmittedTasks((prevTasks) =>
         prevTasks.map((task) =>
           task.name === name &&
@@ -105,7 +102,7 @@ const SubmittedWork = () => {
                         task.name,
                         task.category,
                         task.priority,
-                        "assigned"
+                        "Assigned"
                       )
                     }
                   >

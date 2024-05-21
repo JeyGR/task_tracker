@@ -14,7 +14,7 @@ const Pendingtasks = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://task-tracker-ozsp.onrender.com/api/v1/asignedtasks/${id}`
+          `http://localhost:3000/api/v1/asignedtasks/${id}`
         );
         setTasks(response.data);
         console.log(response.data);
@@ -36,21 +36,25 @@ const Pendingtasks = () => {
     }));
   };
 
-  const handleSubmitWorkLink = async (taskId) => {
+  const handleSubmitWorkLink = async (id, name, priority, category) => {
     try {
-      const workLink = workLinks[taskId] || "";
-      await axios.post(
-        `https://task-tracker-ozsp.onrender.com/api/v1/tasks/${taskId}/submit`,
-        {
+      if (!workLinks[id]) {
+        alert("Provide the work link !");
+      } else {
+        const workLink = workLinks[id] || "";
+        await axios.post(`http://localhost:3000/api/v1/tasks/${id}/submit`, {
           workLink,
-        }
-      );
-      alert("Work link submitted successfully");
-      setWorkLinks((prevLinks) => ({
-        ...prevLinks,
-        [taskId]: "",
-      }));
-      window.location.reload();
+          name,
+          priority,
+          category,
+        });
+        alert("Work link submitted successfully");
+        setWorkLinks((prevLinks) => ({
+          ...prevLinks,
+          [id]: "",
+        }));
+        window.location.reload();
+      }
     } catch (err) {
       console.log("Error submitting work link:", err);
     }
@@ -100,7 +104,16 @@ const Pendingtasks = () => {
                         />
                       </td>
                       <td>
-                        <button onClick={() => handleSubmitWorkLink(task.id)}>
+                        <button
+                          onClick={() =>
+                            handleSubmitWorkLink(
+                              task.id,
+                              task.name,
+                              task.priority,
+                              task.category
+                            )
+                          }
+                        >
                           Submit Work Link
                         </button>
                       </td>
