@@ -15,7 +15,7 @@ const Studenthomepage = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/api/v1/unasignedtasks/`
+          `https://task-tracker-ozsp.onrender.com/api/v1/unasignedtasks/`
         );
         setRess(response.data);
       } catch (error) {
@@ -31,7 +31,7 @@ const Studenthomepage = () => {
     const fetchData = async () => {
       try {
         const datass = await axios.get(
-          `http://localhost:3000/api/v1/completedtasks/${id}`
+          `https://task-tracker-ozsp.onrender.com/api/v1/completedtasks/${id}`
         );
         setTaskss(datass.data);
         console.log("Fetching");
@@ -48,7 +48,7 @@ const Studenthomepage = () => {
     try {
       const update = async () => {
         const response = await axios.post(
-          `http://localhost:3000/api/v1/asigntask`,
+          `https://task-tracker-ozsp.onrender.com/api/v1/asigntask`,
           { id, name, category, deadline, priority }
         );
         console.log(response.data);
