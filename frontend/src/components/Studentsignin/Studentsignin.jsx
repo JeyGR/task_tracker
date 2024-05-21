@@ -35,7 +35,6 @@ const Studentsignin = () => {
     const today = new Date();
     const year = today.getFullYear();
     const dobyear = parseInt(dob.split("-")[0]);
-    // console.log("Attempting to sign in with:", username, department, dob, id);
     const data = {
       name: username,
       dept: department,
@@ -55,7 +54,7 @@ const Studentsignin = () => {
         try {
           console.log("Working");
           const ress = await axios.post(
-            "http://localhost:3000/api/v1/studentsignin",
+            "https://task-tracker-ozsp.onrender.com/api/v1/studentsignin",
             data
           );
           if (ress.data.msg == "Success") {
