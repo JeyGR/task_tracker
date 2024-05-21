@@ -14,7 +14,7 @@ const Pendingtasks = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/api/v1/asignedtasks/${id}`
+          `https://task-tracker-ozsp.onrender.com/api/v1/asignedtasks/${id}`
         );
         setTasks(response.data);
         console.log(response.data);
@@ -42,7 +42,7 @@ const Pendingtasks = () => {
         alert("Provide the work link !");
       } else {
         const workLink = workLinks[id] || "";
-        await axios.post(`http://localhost:3000/api/v1/tasks/${id}/submit`, {
+        await axios.post(`https://task-tracker-ozsp.onrender.com/api/v1/tasks/${id}/submit`, {
           workLink,
           name,
           priority,
