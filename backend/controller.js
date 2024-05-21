@@ -132,7 +132,7 @@ const asignnewTask = async (req, res) => {
     } else {
       const stat = "Assigned";
       await client.query(
-        "INSERT INTO taskdetails(name,category,priority,deadline,id,status) VALUES($1, $2,$3,$4,$5,'assigned')",
+        "INSERT INTO taskdetails(name,category,priority,deadline,id,status) VALUES($1, $2,$3,$4,$5,$6)",
         [name, category, priority, deadline, id, stat]
       );
       res.json({ msg: "Success" });
