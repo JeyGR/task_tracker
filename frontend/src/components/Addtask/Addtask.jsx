@@ -46,13 +46,16 @@ export const Addtask = () => {
         (yeardiff === 0 && monthdiff === 0 && datediff >= 0)
       ) {
         const fetchData = async () => {
-          await axios.post("http://localhost:3000/api/v1/asignnewtask", {
-            name,
-            category,
-            priority,
-            deadline,
-            id,
-          });
+          await axios.post(
+            "https://task-tracker-silk-pi.vercel.app/pendingtasks/102/api/v1/asignnewtask",
+            {
+              name,
+              category,
+              priority,
+              deadline,
+              id,
+            }
+          );
           console.log("Data sent to backend");
           alert("Task is assigned");
         };
@@ -123,7 +126,7 @@ export const Addtask = () => {
               addnewtasktouser(e);
             }}
           >
-            Add Task
+            Add Ticket
           </button>
         </form>
       </div>
