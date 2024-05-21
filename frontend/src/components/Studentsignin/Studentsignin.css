@@ -1,25 +1,52 @@
+/* Studentsignin.css */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
 .container {
-  position: relative;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  height: 100vh;
-  background-color: #f8f9fa;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f0f2f5;
+  min-height: 100vh;
+}
+
+.admin-login-button {
+  align-self: flex-end;
+  margin-bottom: 20px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.admin-login-button:hover {
+  background-color: #0056b3;
 }
 
 .form {
-  width: 300px;
-  background-color: #fff;
-  padding: 20px;
-  padding-right: 40px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
 }
 
 .form h2 {
   margin-bottom: 20px;
-  text-align: center;
+  font-size: 24px;
+  color: #333333;
 }
 
 .form-group {
@@ -29,66 +56,61 @@
 .form-group label {
   display: block;
   margin-bottom: 5px;
+  font-weight: bold;
+  color: #555555;
 }
 
 .form-group input {
   width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-size: 16px;
 }
 
 .signin-button {
   width: 100%;
-  padding: 10px;
   background-color: #007bff;
-  color: #fff;
+  color: #ffffff;
   border: none;
-  border-radius: 5px;
+  padding: 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-top: 10px;
 }
 
 .signin-button:hover {
   background-color: #0056b3;
 }
 
-.admin-login-button {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  padding: 8px 15px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.admin-login-button:hover {
-  background-color: #0056b3;
-}
-
 .login-section {
-  text-align: center;
   margin-top: 20px;
+  text-align: center;
 }
 
 .login-section p {
   margin-bottom: 10px;
+  color: #555555;
 }
 
 .login-button {
-  padding: 8px 15px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
+  background-color: #ffffff;
+  color: #007bff;
+  border: 2px solid #007bff;
+  padding: 10px 20px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .login-button:hover {
-  background-color: #0056b3;
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+button:focus {
+  outline: none;
 }

@@ -1,28 +1,86 @@
+/* Pendingtasks.css */
+
+.topdiv {
+  padding: 20px;
+}
+
 .nav-bar {
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
-  box-shadow: 0px 1px 3px 0px #00000069;
-}
-table {
-  width: 90%;
-  border-collapse: separate;
-  border-spacing: 0px 20px;
-}
-.table {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background-color: #f8f9fa;
+  padding: 10px 20px;
+  border-bottom: 2px solid #dee2e6;
 }
 
-.backbtn {
-  margin-left: 15px;
-}
+.backbtn,
 .noveltybtn {
-  margin-right: 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
+
+.backbtn:hover,
+.noveltybtn:hover {
+  background-color: #0056b3;
+}
+
 .pendingtxt {
-  margin-left: 20px;
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.pending {
+  margin-top: 20px;
+}
+
+.table {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.table th,
+.table td {
+  padding: 12px;
+  border: 1px solid #dee2e6;
+  text-align: left;
+}
+
+.table th {
+  background-color: #007bff;
+  color: white;
+}
+
+.table td input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.table td button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.table td button:hover {
+  background-color: #218838;
 }

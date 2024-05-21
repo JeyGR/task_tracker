@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Addtask.css";
-import { useState } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 
@@ -54,13 +53,13 @@ export const Addtask = () => {
             deadline,
             id,
           });
-          console.log("Data send to backend");
+          console.log("Data sent to backend");
           alert("Task is assigned");
         };
         fetchData();
       } else {
         console.log(deadlinedate - day);
-        alert("Deadline can't be in past");
+        alert("Deadline can't be in the past");
       }
     } catch (err) {
       console.log("addnewtasktouser err: ", err);
@@ -74,7 +73,7 @@ export const Addtask = () => {
       </button>
       <div className="addcard">
         <form action="">
-          <label htmlFor="name">Task Name</label>
+          <label htmlFor="name">Ticket Name</label>
           <br />
           <input
             type="text"
@@ -96,13 +95,17 @@ export const Addtask = () => {
           <br />
           <label htmlFor="priority">Priority</label>
           <br />
-          <input
-            type="text"
+          <select
             name="priority"
             value={priority}
             onChange={handlePriorityChange}
-            placeholder="Priority"
-          />
+          >
+            <option value="">Select Priority</option>
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+            <option value="Immediate">Immediate</option>
+          </select>
           <br />
           <label htmlFor="deadline">Deadline</label>
           <br />

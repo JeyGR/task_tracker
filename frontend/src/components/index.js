@@ -6,3 +6,4 @@ export { default as PendingTasks } from "./Pendingtasks/Pendingtasks";
 export { default as Adminhomepage } from "./Adminhomepage/Adminhomepage";
 export { default as Studentcard } from "./Studentcard/Studentcard";
 export { default as Addtask } from "./Addtask/Addtask";
+export { default as SubmittedWork } from "./SubmittedWork/SubmittedWork";

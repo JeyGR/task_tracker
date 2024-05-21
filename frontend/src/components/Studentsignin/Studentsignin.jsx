@@ -85,7 +85,7 @@ const Studentsignin = () => {
   return (
     <div className="container">
       <button className="admin-login-button" onClick={handleAdminLogin}>
-        Admin Login
+        Lead Login
       </button>
       <div className="form">
         <h2>Student Signin</h2>

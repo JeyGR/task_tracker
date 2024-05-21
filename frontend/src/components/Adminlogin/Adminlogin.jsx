@@ -35,7 +35,7 @@ const Adminlogin = () => {
         Student Login
       </button>
       <div className="form">
-        <h2>Admin Login</h2>
+        <h2>Lead Login</h2>
         <div className="form-group">
           <label>Username:</label>
           <input type="text" value={username} onChange={handleUsernameChange} />

@@ -74,15 +74,15 @@ const Studenthomepage = () => {
           <button onClick={handlelogout}>Logout</button>
         </div>
       </div>
-      <h2 className="taskstxt">Tasks:</h2>
+      <h2 className="taskstxt">Tickets:</h2>
       <div className="tabel">
         <table>
           <tr>
-            <th>Task</th>
+            <th>Ticket</th>
             <th>Category</th>
             <th>Priority</th>
             <th>Deadline</th>
-            <th>Add Task</th>
+            <th>Add Ticket</th>
           </tr>
           {Array.isArray(ress) &&
             ress.map((d, index) => {
@@ -99,7 +99,7 @@ const Studenthomepage = () => {
                         handleadd(d.name, d.category, d.deadline, d.priority);
                       }}
                     >
-                      Add task
+                      Add Ticket
                     </button>
                   </td>
                 </tr>
@@ -107,11 +107,11 @@ const Studenthomepage = () => {
             })}
         </table>
       </div>
-      <h2 className="completedtaskstxt">Completed Tasks:</h2>
+      <h2 className="completedtaskstxt">Completed Tickets:</h2>
       <div className="tabel2">
         <table>
           <tr>
-            <th>Task</th>
+            <th>Ticket</th>
             <th>Category</th>
             <th>Priority</th>
             <th>Deadline</th>

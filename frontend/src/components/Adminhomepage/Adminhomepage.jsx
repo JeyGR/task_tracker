@@ -27,6 +27,9 @@ const Adminhomepage = () => {
   const handleaddopentask = () => {
     navigate("/addtask/00");
   };
+  const handlesubmittedwork = () => {
+    navigate("/submittedwork");
+  };
 
   return (
     <div className="topdiv">
@@ -38,9 +41,12 @@ const Adminhomepage = () => {
         >
           Back
         </button>
-        <h3 className="admintxt">Admin Access</h3>
+        <h3 className="admintxt">Lead Access</h3>
         <button onClick={handleaddopentask} className="addopentaskbtn">
-          Add open Task
+          Add open Ticket
+        </button>
+        <button onClick={handlesubmittedwork} className="submittedworkbtn">
+          View Submitted Work
         </button>
       </div>
       <br />

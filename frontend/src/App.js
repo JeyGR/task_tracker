@@ -8,6 +8,7 @@ import {
   PendingTasks,
   Studenthomepage,
   Studentsignin,
+  SubmittedWork,
 } from "./components";
 import { Routes, Route } from "react-router-dom";
 
@@ -22,6 +23,7 @@ function App() {
         <Route path="pendingtasks/:id" element={<PendingTasks />} />
         <Route path="adminhomepage" element={<Adminhomepage />} />
         <Route path="addtask/:id" element={<Addtask />} />
+        <Route path="/submittedwork" element={<SubmittedWork />} />
       </Routes>
     </div>
   );

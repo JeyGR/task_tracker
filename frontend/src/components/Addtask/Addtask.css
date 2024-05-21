@@ -1,20 +1,72 @@
+/* Addtask.css */
+
 .highdiv {
+  padding: 20px;
+  background-color: #f8f9fa;
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  position: relative;
+  align-items: center;
 }
-.addcard {
-  padding: 40px;
-  background-color: white;
-  box-shadow: 0px 2px 3px 1px #0000004d;
-  margin-top: 20px;
-  border-radius: 10px;
-}
+
 .backbtn1 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: 20px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  align-self: flex-start;
+}
+
+.backbtn1:hover {
+  background-color: #0056b3;
+}
+
+.addcard {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333333;
+}
+
+input[type="text"],
+input[type="date"],
+select {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  width: 100%;
+}
+
+button {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
 }
