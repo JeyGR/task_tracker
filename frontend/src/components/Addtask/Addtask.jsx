@@ -47,7 +47,7 @@ export const Addtask = () => {
       ) {
         const fetchData = async () => {
           await axios.post(
-            "https://task-tracker-silk-pi.vercel.app/api/v1/asignnewtask",
+            "https://task-tracker-ozsp.onrender.com/api/v1/asignnewtask",
             {
               name,
               category,
