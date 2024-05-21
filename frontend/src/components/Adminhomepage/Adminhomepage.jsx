@@ -39,7 +39,7 @@ const Adminhomepage = () => {
         backbtn"
           onClick={handlebackbtn}
         >
-          Back
+          Logout
         </button>
         <h3 className="admintxt">Lead Access</h3>
         <button onClick={handleaddopentask} className="addopentaskbtn">

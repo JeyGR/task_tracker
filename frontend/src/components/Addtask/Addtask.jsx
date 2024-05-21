@@ -126,7 +126,7 @@ export const Addtask = () => {
               addnewtasktouser(e);
             }}
           >
-            Add Task
+            Add Ticket
           </button>
         </form>
       </div>

@@ -66,7 +66,7 @@ const SubmittedWork = () => {
         <table>
           <thead>
             <tr>
-              <th>Task</th>
+              <th>Ticket</th>
               <th>Category</th>
               <th>Priority</th>
               <th>Deadline</th>

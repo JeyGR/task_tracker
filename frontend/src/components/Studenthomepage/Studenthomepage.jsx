@@ -68,7 +68,7 @@ const Studenthomepage = () => {
         <button className="menubtn" onClick={handlepending}>
           Pending
         </button>
-        <h3>Student HomePage</h3>
+        <h3>Member HomePage</h3>
         <div className="btngrp">
           <button className="profilebtn">Profile</button>
           <button onClick={handlelogout}>Logout</button>

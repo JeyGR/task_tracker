@@ -87,7 +87,7 @@ const Studentsignin = () => {
         Lead Login
       </button>
       <div className="form">
-        <h2>Student Signin</h2>
+        <h2>Member Signin</h2>
         <div className="form-group">
           <label>Username:</label>
           <input type="text" value={username} onChange={handleUsernameChange} />
