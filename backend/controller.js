@@ -69,7 +69,7 @@ const asignedTasks = async (req, res) => {
   const id = req.params.id;
   try {
     await client.query(
-      "SELECT * FROM taskdetails WHERE id =$1 AND status='assigned'",
+      "SELECT * FROM taskdetails WHERE id =$1 AND status='Assigned'",
       [id],
       (err, ress) => {
         if (err) {
