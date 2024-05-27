@@ -20,7 +20,7 @@ const Studentcard = ({ data }) => {
             movetoaddtask(data.id);
           }}
         >
-          Assign task
+          Add Ticket
         </button>
       </div>
     </div>
